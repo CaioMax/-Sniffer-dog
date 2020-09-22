@@ -4,8 +4,25 @@
   "description": "API Rest for Sniffer Dog system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint_staged"
+    }
   },
   "author": "Caio Max Trindade",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^5.0.0-alpha.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "standard": "^14.3.4"
+  }
 }
